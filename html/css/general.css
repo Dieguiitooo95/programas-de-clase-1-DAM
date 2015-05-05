@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, Helvetica, "Sans Serif";
+}
+
+div {
+    border: 1px solid gray;
+}
+
+#page {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+#header {
+    background-image: url('../images/top_nav_bg.png');
+    background-repeat: no-repeat;
+    height: 52px;
+}
+
+#logo {
+    margin-left: 130px;
+    box-shadow: 4px 1px 5px #333;
+}
+
+#menu {
+    float: right;
+    margin-right: 130px;
+}
+
+#menu li {
+    display: inline;
+    margin-left: 54px;
+}
+
+#menu a {
+    text-decoration: none;
+}
+
+#banner {
+    background-image: url('../images/banner.png');
+}
+
+#tab {
+    float: right;
+    width: 633px;
+    background-image: url('../images/tab.png');
+}
+
+#tab div {
+    width: 365px;
+}
