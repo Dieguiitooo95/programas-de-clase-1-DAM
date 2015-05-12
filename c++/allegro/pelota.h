@@ -1,6 +1,8 @@
 #ifndef __PELOTA_H__
 #define __PELOTA_H__
 
+#include <allegro5/allegro.h>
+
 class Pelota
 {
     private:
@@ -8,14 +10,17 @@ class Pelota
 	double y;
 	double vx;
 	double vy;
-	char dibujo;
+	ALLEGRO_BITMAP *dibujo;
+
     public:
 	Pelota ();
 	Pelota (double x, double y);
 	void actualizate ();
 	double get_x ();
 	double get_y ();
-	char get_dibujo ();
+	ALLEGRO_BITMAP *get_dibujo ();
+	void set_dibujo (ALLEGRO_BITMAP *sprite);
 };
+
 
 #endif
