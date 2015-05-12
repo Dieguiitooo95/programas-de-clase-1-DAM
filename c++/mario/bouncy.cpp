@@ -44,10 +44,10 @@ main (int argc, char **argv)
 	if (redraw && al_is_event_queue_empty (event_queue))
 	{
 	    al_clear_to_color (al_map_rgb (0, 0, 0));
-	    al_draw_bitmap (bm2,0,0,0);
+	    al_draw_bitmap (bm2, 0,0,0);
 	    for (int i=0; i<N; i++)
-		al_draw_bitmap (pelota[i].get_dibujo (), pelota[i].get_x () + 450,
-			pelota[i].get_y () + 450, 0);
+		al_draw_bitmap (pelota[i].get_dibujo (), pelota[i].get_x (),
+			pelota[i].get_y (), 0);
 	    
 	    al_flip_display ();
 	    redraw = false;
