@@ -1,10 +1,7 @@
 #include "mi_allegro.h"
-
 ALLEGRO_EVENT_QUEUE *event_queue;
 ALLEGRO_DISPLAY *display;
 ALLEGRO_TIMER *timer;
-ALLEGRO_BITMAP *bm;
-ALLEGRO_BITMAP *bm2
 bool redraw;
 void
 iniciar_allegro ()
@@ -51,27 +48,11 @@ iniciar_allegro ()
 		ALLEGRO_MESSAGEBOX_ERROR);
 	exit (EXIT_FAILURE);
     }
-
-    bm2 = al_load_bitmap (BACKGROUND);
-    bm = al_load_bitmap (SPRITESHEET);
-    
-    if (!bm or !bm2)
-    {
-	al_show_native_message_box (display, "Error", "Error",
-		"No se ha podido crear el bitmap", NULL,
-		ALLEGRO_MESSAGEBOX_ERROR);
-	al_destroy_timer (timer);
-	al_destroy_display (display);
-	exit (EXIT_FAILURE);
-    }
-
     event_queue = al_create_event_queue ();
     if (!event_queue)
     {
 	al_destroy_timer (timer);
 	al_destroy_display (display);
-	al_destroy_bitmap (bm2);
-	al_destroy_bitmap (bm);
 	al_show_native_message_box (display, "Error", "Error",
 		"No se ha creado la cola de eventos.", NULL,
 		ALLEGRO_MESSAGEBOX_ERROR);
@@ -88,8 +69,6 @@ iniciar_allegro ()
 void
 destruir_allegro ()
 {
-    al_destroy_bitmap (bm);
-    al_destroy_bitmap (bm2);
     al_destroy_timer (timer);
     al_destroy_display (display);
     al_destroy_event_queue (event_queue);

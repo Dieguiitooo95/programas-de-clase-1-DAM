@@ -4,7 +4,7 @@ ALLEGRO_EVENT_QUEUE *event_queue;
 ALLEGRO_DISPLAY *display;
 ALLEGRO_TIMER *timer;
 ALLEGRO_BITMAP *bm;
-ALLEGRO_BITMAP *bm2
+ALLEGRO_BITMAP *bm2;
 bool redraw;
 void
 iniciar_allegro ()
@@ -12,6 +12,7 @@ iniciar_allegro ()
     event_queue = NULL;
     display = NULL;
     timer = NULL;
+    bm = NULL;
     redraw = true;
     if (!al_init ())
     {
@@ -27,22 +28,25 @@ iniciar_allegro ()
 		NULL, ALLEGRO_MESSAGEBOX_ERROR);
 	exit (EXIT_FAILURE);
     }
-    if (!al_install_keyboard() )
+
+    if (!al_install_keyboard())
     {
 	al_show_native_message_box (display, "Error", "Error",
 		"No se ha podido inicializar el teclado.",
 		NULL, ALLEGRO_MESSAGEBOX_ERROR);
 	exit (EXIT_FAILURE);
     }
+    
     timer = al_create_timer (1.0 / FPS);
+    
     if (!timer)
     {
 	al_show_native_message_box (display, "Error", "Error",
 		"No se ha podido crear un temporizador.",
 		NULL, ALLEGRO_MESSAGEBOX_ERROR);
 	exit (EXIT_FAILURE);
-    }
-    display = al_create_display (1024, 768);
+   }
+    display = al_create_display (1776, 1000);
     if (!display)
     {
 	al_destroy_timer (timer);
@@ -51,10 +55,10 @@ iniciar_allegro ()
 		ALLEGRO_MESSAGEBOX_ERROR);
 	exit (EXIT_FAILURE);
     }
-
+    
     bm2 = al_load_bitmap (BACKGROUND);
     bm = al_load_bitmap (SPRITESHEET);
-    
+
     if (!bm or !bm2)
     {
 	al_show_native_message_box (display, "Error", "Error",
@@ -65,23 +69,23 @@ iniciar_allegro ()
 	exit (EXIT_FAILURE);
     }
 
-    event_queue = al_create_event_queue ();
+ event_queue = al_create_event_queue ();
     if (!event_queue)
     {
+	al_clear_to_color (al_map_rgb (0, 0, 0));
 	al_destroy_timer (timer);
-	al_destroy_display (display);
 	al_destroy_bitmap (bm2);
 	al_destroy_bitmap (bm);
+	al_destroy_display (display);
 	al_show_native_message_box (display, "Error", "Error",
 		"No se ha creado la cola de eventos.", NULL,
 		ALLEGRO_MESSAGEBOX_ERROR);
 	exit (EXIT_FAILURE);
     }
     al_register_event_source (event_queue, al_get_timer_event_source (timer));
-    al_register_event_source (event_queue, al_get_keyboard_event_source());
     al_register_event_source (event_queue,
 	    al_get_display_event_source (display));
-    al_clear_to_color (al_map_rgb (0, 0, 0));
+
     al_flip_display ();
     al_start_timer (timer);
 }

@@ -1,10 +1,12 @@
 #include "mi_allegro.h"
+#define SPRITESHEET "sprites/loco.png"
+#define BACKGROUND "sprites/fondo.png"
 
 ALLEGRO_EVENT_QUEUE *event_queue;
 ALLEGRO_DISPLAY *display;
 ALLEGRO_TIMER *timer;
 ALLEGRO_BITMAP *bm;
-ALLEGRO_BITMAP *bm2
+ALLEGRO_BITMAP *bm2;
 bool redraw;
 void
 iniciar_allegro ()
@@ -42,7 +44,7 @@ iniciar_allegro ()
 		NULL, ALLEGRO_MESSAGEBOX_ERROR);
 	exit (EXIT_FAILURE);
     }
-    display = al_create_display (1024, 768);
+    display = al_create_display (785, 589);
     if (!display)
     {
 	al_destroy_timer (timer);
@@ -68,10 +70,11 @@ iniciar_allegro ()
     event_queue = al_create_event_queue ();
     if (!event_queue)
     {
+	al_clear_to_color (al_map_rgb (0, 0, 0));
 	al_destroy_timer (timer);
-	al_destroy_display (display);
 	al_destroy_bitmap (bm2);
 	al_destroy_bitmap (bm);
+	al_destroy_display (display);
 	al_show_native_message_box (display, "Error", "Error",
 		"No se ha creado la cola de eventos.", NULL,
 		ALLEGRO_MESSAGEBOX_ERROR);
