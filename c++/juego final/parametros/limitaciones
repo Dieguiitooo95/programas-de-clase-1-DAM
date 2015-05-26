@@ -1,0 +1,17 @@
+void Objeto::actualizar (int anchura, int altura)
+{
+    this->vx -= ROZAMIENTO * this->vx;
+    this->vy -= ROZAMIENTO * this->vy;
+    this->x += this->vx;
+    this->y += this->vy;
+   
+    if(this->y < 0)
+    this->y=0;
+    if(this->y > AlturaDisplay-TamañoImagenAlto)
+    this->y = AlturaDisplay-TamañoImagenAlto;
+    if(this->x < 0)
+    this->x=0;
+    if(this->x > AnchoDisplaya-TamañoImagenAncho)
+    this->x = AnchoDisplaya-TamañoImagenAncho;
+
+}

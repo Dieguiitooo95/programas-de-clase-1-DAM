@@ -111,8 +111,8 @@ main (int argc, char **argv)
 	    al_clear_to_color (al_map_rgb (0, 0, 0));
 	    al_draw_bitmap (bm2, 0, 0, 0);
 	    for (int i = 0; i < N; i++)
-		al_draw_bitmap (mario.get_dibujo (),  mario.get_x () + 450,
-			mario.get_y () + 450, 0);
+		al_draw_bitmap (mario.get_dibujo (),  mario.get_x (), 
+			mario.get_y (), 0);
 	    al_flip_display ();
 	    redraw = false;
 	}

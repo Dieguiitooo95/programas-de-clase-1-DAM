@@ -15,6 +15,8 @@ class Mario
 	void actualizate ();
 	double get_x ();
 	double get_y ();
+	void get_vx ();
+	void get_vy ();
 	void change_vx(float delta);
 	void change_vy(float delta);
 	ALLEGRO_BITMAP *get_dibujo ();

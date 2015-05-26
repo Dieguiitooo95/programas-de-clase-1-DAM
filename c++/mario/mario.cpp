@@ -53,7 +53,7 @@ void
 Mario::actualizate ()
 {
     this->vx -= ROZAMIENTO * this->vx;
-    this->vy += ROZAMIENTO * (-1.5);
+    this->vy += ROZAMIENTO * this->vx;
     this->x += this->vx;
     this->y += this->vy;
 }
