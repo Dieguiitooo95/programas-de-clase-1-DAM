@@ -13,6 +13,7 @@ class Mario
 	Mario ();
 	Mario (double x, double y);
 	void actualizate ();
+	int gameover ();
 	double get_x ();
 	double get_y ();
 	void get_vx ();

@@ -9,8 +9,6 @@ Mario::Mario ()
   static int i = 0;		// Pdte. variables de clase
   this->x = this->x + 331;
   this->y = this->y + 240;
-  //this->x = 0 + 5 * i++;
-  //this->y = 10;
   this->vx = 0;
   this->vy = 0;
   this->dibujo = NULL;
@@ -78,4 +76,19 @@ Mario::actualizate ()
     this->x = 0;
   if (this->x > 633+78 - 145)
     this->x = 700+78 - 145;
+}
+
+int
+Mario::gameover ()
+{
+  if (this->y < 30)
+    return 0;
+  if (this->y > 480+70 - 153)
+    return 0; 
+  if (this->x < 30)
+    return 0;
+  if (this->x > 633+78 - 165)
+    return 0;
+ 
+  return 1;
 }

@@ -105,6 +105,11 @@ main (int argc, char **argv)
 	    mario.change_vx(DELTA);
 	
 	mario.actualizate();
+	
+	if (mario.gameover() == 0)
+	{
+	    return 0;
+	}
 
 	if (redraw && al_is_event_queue_empty (event_queue))
 	{
