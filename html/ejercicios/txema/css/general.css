@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, Helvetica, "Sans Serif";
+}
+div {
+    border: 1px solid gray;
+}
+#page {
+    width: 1200px;
+    margin: 0 auto;
+}
+#header {
+    background-image: url('../images/top_nav_bg.png');
+    background-repeat: no-repeat;
+    height: 56px;
+}
+#logo {
+    margin-left: 130px;
+    box-shadow: 4px 1px 5px #333;
+}
+#menu {
+    float: right;
+    margin-right: 130px;
+}
+#menu li	{
+    display: inline;
+    margin-left: 54px;
+}
+#menu a {
+    text-decoration: none;
+}
+#content {
+    width: 980px;
+    margin: 0 auto;
+}
+#banner {
+    background-image: url('../images/banner.png');
+    background-repeat: no-repeat;
+}
+#tab {
+    float: right;
+    width: 480px;
+    height: 386px;
+    background-image: url('../images/tab.png');
+}
+#tab div {
+    width: 305px;
+    margin: 0 10px;
+}
+.StopRod {
+    clear: both;
+}
+#claim {
+    color: #0e218a;
+    font-size: 24pt;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+#tab div {
+    color: #777;
+}
+#tab p {
+    margin-left: 18px;
+}
+.CenteredButton{
+    text-align: center;
+}
+.Offer {
+    width: 480px;
+    display: inline-block;
+}
+#products {
+    position: relative;
+    top: -10px;
+}
+#products>h2 {
+    position: absolute;
+    top: -40px;
+    left: 100px;
+}
+
+.Products {
+    display:inline-block;
+}
+
+.Description {
+    display:inline-block;
+}

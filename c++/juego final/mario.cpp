@@ -87,7 +87,7 @@ Mario::gameover ()
     return 0; 
   if (this->x < 30)
     return 0;
-  if (this->x > 633+78 - 165)
+  if (this->x > 633+78 - 145)
     return 0;
  
   return 1;

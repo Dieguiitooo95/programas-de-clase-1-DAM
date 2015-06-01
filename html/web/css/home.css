@@ -1,0 +1,120 @@
+div{
+border: 0px solid black;
+}
+#page{
+width: 963px;
+margin: 0 auto 0 auto;
+}
+#logo {
+float: left;
+width: 220px;
+height: 30px;
+}
+ul#menu {
+text-align: right;
+list-style-type: none;
+text-transform: uppercase;
+}
+ul#menu li {
+display: inline;
+margin: 0 1ex 0 1ex;
+}
+ul#menu a{
+color: #AAA;
+text-decoration: none;
+padding: 0.3ex 1ex 0.3ex 1ex;
+}
+ul#menu a:hover {
+background-image: url('../images/fondo_boton.png');
+}
+#claim {
+background-image: url('../images/claim.png');
+height: 336px;
+}
+#showfront {
+float:right;
+margin-top:36px;
+margin-right: 15px;
+width: 400px;
+height: 270px;
+z-index: 2;
+position: relative;
+}
+#claim span {
+margin-top:70px;
+margin-left:40px;
+float:left;
+color:white;
+font-size:20pt;
+font-family:arial;
+}
+.Advantage{
+background-color: #EDEDED;
+float:left;
+font-size: 9pt;
+font-family: arial;
+width: 309px;
+height: 100px;
+padding: 5ex 1ex 1ex 1ex;
+border: 0px;
+}
+#advantages{
+display:inline-block;
+position: relative;
+top: -50px;
+}
+.Text{
+position: relative;
+left:100px;
+top:-50px;
+}
+#button {
+margin-top: 200px;
+margin-left:-350px;
+}
+.Texto {
+position: relative;
+color: red;
+font-weight: bold;
+font-size: 12pt;
+border: 0px;
+top: -43px;
+left: 75px;
+}
+.Presentation {
+font-size: 10pt;
+font-family: arial;
+width: 300px;
+display:inline-block;
+float: left;
+padding: 1ex 1ex 1ex 1ex;
+border: 0px;
+}
+#presentation ul{
+list-style:none;
+color: blue;
+}
+.Read {
+float: left;
+margin-top:30px;
+height:40px;
+}
+.Aside {
+background-color: #EDEDED;
+float: left;
+width: 284px;
+height:200px;
+font-size: 9pt;
+font-family: arial;
+padding: 5ex 1ex 6ex 5ex;
+border:0px;
+}
+#aside {
+display:inline-block;
+}
+#aside ul{
+list-style:none
+}
+.Color{
+color: blue;
+}
